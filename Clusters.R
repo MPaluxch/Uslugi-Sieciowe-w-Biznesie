@@ -74,11 +74,18 @@ model
 fviz_cluster(model, danestand, geom="point", 
              main=paste0("Metoda k-œrednich dla K = ", 3), ggtheme=theme_minimal())
 
+clusters <- mutate(dane2, cluster = model$cluster)
+clusters
+       
 ## Wnioski:
 ## Z powyzszej grafiki mozna wywynioskowac ze:
 ## Do klastra 1 naleza przedmioty o duzej ilosci zamowien lacznie, ale tez generujace maly zarobek
 ## Do klastra 2 naleza przedmioty o malej ilosci zamowien lacznie ale generujace bardzo duzy zarobek
 ## Do klastra 3 naleza przemioty o stosunkowo niewielkiej ilosci zamowien, i generujaca stosunkowo niski zarobek
 
-clusters <- mutate(dane2, cluster = model$cluster)
-clusters
+## Produkty z klastra 3: iPhone, Macbook Pro Laptop, oraz ThinkPad Laptop - mozna zauwazyc ze produkty te 
+## generuja firmie duzy zarobek - dobrym pomyslem bylaby realizacja reklam tych produktow, aby w przyszlosci
+## sprzedawac ich jeszcze wiecej. 
+## Rowniez jezeli produkt z klastra 1, lub 3 zostal dodany do koszyka mozna zapropoponowac produkty z klastra 2 -
+## klienci zamawiaja te produkty bardzo czesto przy niewielkiej cenie - dodatkowo sa one pasujace do innych:
+## przykladowo do zamowienia iPhona mozna zaproponowac kable do ladowarki.
