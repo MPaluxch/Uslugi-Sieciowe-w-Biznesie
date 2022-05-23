@@ -6,7 +6,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 
-os.chdir(r'C:/Users/macie/Desktop/ToDoList/USB_Raport')
+os.chdir()
 
 sales_data = pd.read_csv('KNIME_Sales_Data.csv')
 
