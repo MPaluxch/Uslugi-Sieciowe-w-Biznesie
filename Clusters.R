@@ -42,7 +42,7 @@ kmeans(danestand, centers = 4, nstart = 25)
 plot_list <- list()
 for (i in 2:6){
   plot_list[[i]] <- (fviz_cluster(kmeans(danestand, centers = i, nstart = 25), danestand, geom="point", 
-                                  main=paste0("Metoda k-œrednich K=", i), ggtheme=theme_minimal()))
+                                  main=paste0("Metoda k-Å“rednich K=", i), ggtheme=theme_minimal()))
 }
 grid.arrange(plot_list[[2]],plot_list[[3]],plot_list[[4]],plot_list[[5]],plot_list[[6]])
 plot(danestand$Quantity.Ordered, danestand$TotalPrice)
@@ -72,7 +72,7 @@ model
 
 ## Show plot
 fviz_cluster(model, danestand, geom="point", 
-             main=paste0("Metoda k-œrednich dla K = ", 3), ggtheme=theme_minimal())
+             main=paste0("Metoda k-Å“rednich dla K = ", 3), ggtheme=theme_minimal())
 
 ## Wnioski:
 ## Z powyzszej grafiki mozna wywynioskowac ze:
@@ -82,8 +82,3 @@ fviz_cluster(model, danestand, geom="point",
 
 clusters <- mutate(dane2, cluster = model$cluster)
 clusters
-
-
-
-
-
